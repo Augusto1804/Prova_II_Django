@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu - Gestão de Eventos</title>
+    <style>
+    li {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(18, 67, 96)
+    }
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(16, 55, 95)
+    }
+    button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background: #d3d3d3;
+    color: rgb(21, 31, 42);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+    margin: 0;
+}
+    body {
+        background-color: rgb(218, 218, 218);
+    }
+        p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(167, 167, 168);
+    }
+    A1 {
+       color: rgb(167, 167, 168); 
+       text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<h1>Eventos em Destaque</h1>
+
+<a href="{% url 'novo' %}">
+    <button>Novo Evento</button>
+</a>
+
+<hr>
+
+<ul>
+    {% for e in eventos %}
+        <li>
+            <strong>{{ e.evento }}</strong> - {{ e.local }}
+        </li>
+    {% empty %}
+        <li>Nenhum evento cadastrado</li>
+    {% endfor %}
+</ul>
+
+<footer>
+            <p>
+                Augusto1804 | 
+                |
+                <A1 href="https://github.com/Augusto1804" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </A1>
+            </p>
+        </footer>
+
+</body>
+</html>

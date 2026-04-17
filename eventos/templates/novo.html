@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Evento</title>
+        <style>
+    li {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(0, 0, 0)
+    }
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(23, 53, 100)
+    }
+	button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background: #d7d7d7;
+    color: rgb(6, 44, 85);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+    margin: 0;
+	}
+    body {
+        background-color: rgb(218, 218, 218);
+    }
+    label {
+        color:rgb(21, 42, 60);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    a {
+        color: rgb(8, 29, 47);
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(167, 167, 168);
+    }
+    A1 {
+       color: rgb(167, 167, 168); 
+    }
+</style>
+</head>
+<body>
+
+<h1>Novo Evento</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Evento:</label><br>
+    {{ form.evento }}<br><br>
+
+    <label>Local:</label><br>
+    {{ form.local }}<br><br>
+
+    <button type="submit">Confirmar Cadastro</button>
+</form>
+
+<br>
+<a href="{% url 'menu' %}">Voltar</a>
+
+<footer>
+            <p>
+                Augusto1804 | 
+                |
+                <A1 href="https://github.com/Augusto1804" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </A1>
+            </p>
+        </footer>
+
+</body>
+</html>
